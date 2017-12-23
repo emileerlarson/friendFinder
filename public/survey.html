@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Friend Finder</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+            <div class="jumbotron">
+              <h1>Friend finder</h1>
+              <h3>Answer these 10 Easy questions</h3>
+              <hr>
+              <a href="home.html"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span>Home</button></a>
+            </div>
+            <div class="row">
+        
+              <div class="col-lg-12">
+        
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Lets find a Friend</strong></h3>
+                    <h3 class="panel-title"><strong>Answer these 10 questions with 1 Strongly Agree to 4 Strongly Dissagree</strong></h3>
+                  </div>
+                  <div class="panel-body">
+                    <form method="POST" role="form">
+
+                      <div class="form-group">
+                        <label for="usr">Name:</label>
+                        <input type="text" class="form-control" id="name">
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd">Link to Photo image:</label>
+                        <input type="password" class="form-control" id="photo">
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="name">When going out to eat do you like to Pick the Place</label>
+                        <select class="form-control score" id="sel1">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="name">On a weekend you mostly want to go out and be with Friends</label>
+                        <select class="form-control score" id="sel2">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="name">Your free time is spent watching NetFlix</label>
+                        <select class="form-control score" id="sel3">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="name">I go on social midia at least 5 times a day</label>
+                        <select class="form-control score" id="sel4">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name">I love to be outdoors</label>
+                        <select class="form-control score" id="sel5">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name">Coffee is a way of life</label>
+                        <select class="form-control score" id="sel6">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name">My car is always clean</label>
+                        <select class="form-control score" id="sel7">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name">If I don't make fun of you we are not ture friends</label>
+                        <select class="form-control score" id="sel8">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="name">Oreo's are better double stuffed</label>
+                        <select class="form-control score" id="sel9">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="name">Batman is better than Superman</label>
+                        <select class="form-control score" id="sel10">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+                    </form>
+                    <br>
+                    <div class="text-right">
+                      <button type="submit" class="btn btn-primary btn-md submit" id="add-btn"><span class="glyphicon glyphicon-fire"></span>Time to find me a Friend</button>
+                    </div>
+                  </div>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+        <script type="text/javascript">
+         var score = [];
+          $(".submit").on("click", function(){
+
+            var newProfile = [{
+              name: $('#name').val().trim(),
+              photo: $('#photo').val().trim(),
+              que1: $('#sel1').val().trim(),
+              que2: $('#sel2').val().trim(),
+              que3: $('#sel3').val().trim(),
+              que4: $('#sel4').val().trim(),
+              que5: $('#sel5').val().trim(),
+              que6: $('#sel6').val().trim(),
+              que7: $('#sel7').val().trim(),
+              que8: $('#sel8').val().trim(),
+              que9: $('#sel9').val().trim(),
+              que10: $('#sel10').val().trim(),
+              scores: [],
+            }];
+
+           var individualCount = parseInt(newProfile[0].que1)+parseInt(newProfile[0].que2)+parseInt(newProfile[0].que3)+parseInt(newProfile[0]      .que4)+parseInt(newProfile[0].que5)+parseInt(newProfile[0].que6)+parseInt(newProfile[0].que7)+parseInt(newProfile[0].que8)+parseInt     (newProfile[0].que9)+parseInt(newProfile[0].que10);
+           function total(){
+             for (var i = 0; i < newProfile.length; i++){
+             newProfile[i].scores.push(individualCount);
+           }};
+          total();
+          
+          // function friends(){
+          //   for (var i = 0; i < newProfile.lenght; i++){
+          //     if(newProfile[i].scores <= newProfle[i].scofe){
+          //       alert("Your Match is :"  + newProfile[i].name + newProfile[i].photo)
+          //     }else{
+          //       alert("At this time there are no friend Matches try back tomorrow!")
+          //     }
+          //   };
+          // };
+
+          // friends();
+            return false;
+          })
+
+        </script>
+  </body>
+</html>
