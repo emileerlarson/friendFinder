@@ -1,20 +1,17 @@
-var friendsArray = [
-    {
-        "name":"Ahmed",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-        "scores":[
-            5,
-            1,
-            4,
-            4,
-            5,
-            1,
-            2,
-            5,
-            4,
-            1
-          ]
-      }
-];
+var friendArray = [{
+    name: $('#name').val().trim(),
+    photo: $('#photo').val().trim(),
+    que1: $('#sel1').val().trim(),
+    que2: $('#sel2').val().trim(),
+    que3: $('#sel3').val().trim(),
+    que4: $('#sel4').val().trim(),
+    que5: $('#sel5').val().trim(),
+    que6: $('#sel6').val().trim(),
+    que7: $('#sel7').val().trim(),
+    que8: $('#sel8').val().trim(),
+    que9: $('#sel9').val().trim(),
+    que10: $('#sel10').val().trim(),
+    scores: [],
+  }];
 
 module.exports = friendsArray;
